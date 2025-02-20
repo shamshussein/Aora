@@ -40,7 +40,7 @@ await refetch();
                 Welcome back
               </Text>
               <Text className="text-2xl font-psemibold text-white">
-                JsMasery
+                Hsain
               </Text>
             </View>
             <View className="mt-1.5">
