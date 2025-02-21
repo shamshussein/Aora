@@ -26,7 +26,7 @@ const [play, setPlay] = useState(false)
     <Image source={icons.menu} className="w-5 h-5" resizeMode='contain'/>
     </View>
         </View>
-        {play?
+        {/* {play?
         (
             <Video
        source={{ uri: video }}
@@ -41,7 +41,7 @@ const [play, setPlay] = useState(false)
         }
        }}
        />   
-         ) : (
+         ) : ( */}
             <TouchableOpacity 
             activeOpacity={0.7}
             onPress={()=> setPlay(true)}
@@ -55,7 +55,7 @@ const [play, setPlay] = useState(false)
                  resizeMode='contain'
                  /> 
             </TouchableOpacity>
-        )}
+        {/* )} */}
     </View>
   )
 }

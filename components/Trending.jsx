@@ -26,7 +26,7 @@ const TrendingItem = ({activeItem, item}) => {
     animation={activeItem==item.$id ? zoomIn : zoomOut}
     duration={500}
     >
-      {play ? (
+      {/* {play ? (
        <Video
        source={{uri: item.video}}
        className="w-52 h-72 rounded-[25px] mt-3 bg-white/10"
@@ -39,7 +39,8 @@ const TrendingItem = ({activeItem, item}) => {
         }
        }}
        />
-      ) : (
+      ) :
+       ( */}
         <TouchableOpacity className="relative justify-center items-center" 
         activeOpacity={0.7}
         onPress={()=> setPlay(true)}>
@@ -55,7 +56,7 @@ const TrendingItem = ({activeItem, item}) => {
                           /> 
         </TouchableOpacity>
 
-      )}
+      {/* ) } */}
     </Animatable.View>
 
   )
