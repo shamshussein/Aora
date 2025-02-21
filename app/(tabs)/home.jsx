@@ -24,7 +24,7 @@ await refetch();
   }
 
   // console.log(posts);
-  console.log(user?.username);
+  // console.log(user?.username);
 
   return (
     <SafeAreaView className="bg-primary h-full">
