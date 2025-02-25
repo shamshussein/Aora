@@ -11,7 +11,7 @@ import VideoCard from '../../components/VideoCard'
 import { useGlobalContext } from '../../context/GlobalProvider'
 
 const Home = () => {
-const {User, setUser, setIsLoggedIn} = useGlobalContext()
+const {User} = useGlobalContext()
 
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   const { data: latestPosts } = useAppwrite(getLatestPosts);
