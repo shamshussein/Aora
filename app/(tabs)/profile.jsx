@@ -12,16 +12,18 @@ import InfoBox from '../../components/InfoBox'
 import { router } from 'expo-router'
 
 const Profile = () => {
-const {user, setUser, setIsLoggedIn} = useGlobalContext()
-  const { data: posts, refetch } = useAppwrite( () =>
-    getUserPosts(user.$id)
+const {User, setUser, setIsLoggedIn} = useGlobalContext()
+  const { data: posts } = useAppwrite( () =>
+    getUserPosts(User.$id)
   );
   const logout = async () =>{
     await signOut();
     setUser(null)
     setIsLoggedIn(false)
     router.replace('/sign-in')
-  }
+    }
+  console.log(User?.$id);
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
@@ -43,13 +45,13 @@ const {user, setUser, setIsLoggedIn} = useGlobalContext()
              </TouchableOpacity>
              <View className="w-16 h-16 border border-secondary rounded-lg justify-center items-center">
               <Image 
-              source={{uri: user?.avatar}}
+              source={{uri: User?.avatar}}
               className="w-[90%] h-[90%] rounded-lg"
               resizeMode='cover'
               />
              </View>
              <InfoBox 
-             title={user?.username}
+             title={User?.username}
              containerStyles = "mt-5"
              titleStyles = "text-lg"
              />

@@ -11,7 +11,7 @@ import VideoCard from '../../components/VideoCard'
 import { useGlobalContext } from '../../context/GlobalProvider'
 
 const Home = () => {
-const {user, setUser, setIsLoggedIn} = useGlobalContext()
+const {User, setUser, setIsLoggedIn} = useGlobalContext()
 
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   const { data: latestPosts } = useAppwrite(getLatestPosts);
@@ -24,7 +24,7 @@ await refetch();
   }
 
   // console.log(posts);
-  // console.log(user?.username);
+  // console.log(user?.$id);
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -44,7 +44,7 @@ await refetch();
                 Welcome back,
               </Text>
               <Text className="text-2xl font-psemibold text-white">
-                {user?.username}
+                {User?.username}
               </Text>
             </View>
             <View className="mt-1.5">
